@@ -25,13 +25,17 @@ namespace GenericMaximum
             Console.WriteLine(maximum.FindMaximum("omkar", "shivu", "sameer"));
         }
 
-        public T FindMaximum<T>(T value1, T value2, T value3) where T : IComparable<T>
-        {
-            T max = value1;
 
-            // Using CompairTo function of an Object
-            if (value2.CompareTo(max) > 0) { max = value2; }
-            if (value3.CompareTo(max) > 0) { max = value3; }
+        public T? FindMaximum<T>(params T[] values) where T : IComparable<T>
+        {
+            List<T> list = new();
+
+            foreach (T item in values)
+            {
+                list.Add(item);
+            }
+            list.Sort();
+            T max = list[list.Count - 1];
             return max;
         }
     }
