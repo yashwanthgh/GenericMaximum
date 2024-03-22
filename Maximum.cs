@@ -19,15 +19,19 @@ namespace GenericMaximum
             Console.WriteLine(maximum.FindMaximum(7.9, 8.7, 7.125));
             Console.WriteLine(maximum.FindMaximum(6.6, 11.11, 2.9));
             Console.WriteLine(maximum.FindMaximum(9.7, 9.8, 9.9));
+            Console.WriteLine("String type values");
+            Console.WriteLine(maximum.FindMaximum("sachin", "bharath", "kavya"));
+            Console.WriteLine(maximum.FindMaximum("rakesh", "smitha", "samarth"));
+            Console.WriteLine(maximum.FindMaximum("omkar", "shivu", "sameer"));
         }
 
-        public T FindMaximum<T>(T number1, T number2, T number3) where T : IComparable<T>
+        public T FindMaximum<T>(T value1, T value2, T value3) where T : IComparable<T>
         {
-            T max = number1;
+            T max = value1;
 
             // Using CompairTo function of an Object
-            if (number2.CompareTo(max) > 0) { max = number2; }
-            if (number3.CompareTo(max) > 0) { max = number3; }
+            if (value2.CompareTo(max) > 0) { max = value2; }
+            if (value3.CompareTo(max) > 0) { max = value3; }
             return max;
         }
     }
